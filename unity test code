@@ -1,0 +1,257 @@
+	if(Input.GetMouseButtonDown(0));
+	//0:左鍵  1:右鍵  2:滾輪
+
+----------------------
+public GameObject shot;
+public Transform shotSpawn;
+
+void Update(){
+	Instantiate(shot ,shotSpawn.position ,shotSpawn.rotation);
+	//產生shot 用shotSpawn的位置和方向
+}
+
+-----------------------
+public GameObject respawnPrefab;
+public GameObject respawn;
+
+void start(){
+	if (repawn==unll)
+	respawn = GameObject.FindWithTag("Respawn";)
+	//場景中找一個tag
+    GameObject[] respawns =GameObject.FindWithTag("Respawn");
+    //找全部
+}
+void OnTriggerEnter(Collider other){
+	if(other.tag=="Player")//判斷有is trigger時
+	if(other.gameObject.tag=="Player")//判斷無is trigger時
+}
+gameObject.GetComponent("ScripName")//取得腳本
+
+getValue = target.gameObject.GetComponent("ScripName").value;//取得值
+或者
+enemyHP=GameObject.Find("enemy").GetComponent(ScripA);
+enemyHP.hp-=attack;
+
+//我是分隔線-----------------------------------------------------------------------
+
+	void Start () {
+			timer=0;
+		}
+	
+	void OnGUI(){
+		//建立一個背景方框
+		GUI.Box(new Rect(10,10,100,90),"遊戲選單");
+		//建立第一個按鈕，按下時載入指定的場景
+		if(GUI.Button(new Rect(20,40,50,50),"Start")){
+			Application.LoadLevel("Level1");
+		}
+		//按下時離開遊戲
+		if(GUI.Button(new Rect(0,0,50,50),"+")){
+			Application.Quit();
+		}
+		if(GUI.Button(new Rect(0,0,50,50),"+")){
+			playSpeed+=.5f;
+		}
+		if(GUI.Button(new Rect(0,50,50,50),"-")){
+			playSpeed-=.5f;
+		}
+		if(GUI.Button(new Rect(0,100,50,50),"原速")){
+			playSpeed=1f;
+		}
+		if(GUI.Button(new Rect(0,150,50,50),"暫停")){
+			playSpeed=0f;
+		}
+		if(GUI.Button(new Rect(0,200,50,50),"歸零")){
+			timer=0;
+		}
+
+
+//我是分隔線-----------------------------------------------------------------------
+
+    [ExecuteInEditMode] 
+    /*
+    加入 [ExecuteInEditMode] (含中括號)，使這個 script 在編輯模式執行，
+    那麼 GUI 將可以不用執行整個遊戲程式就能處於執行狀態，如此只要調整 Inspector 視窗中的 
+    position 欄位(以上面程式為例)就能邊看 Game 視窗內容邊調整 GUI 位置大小
+    */
+	public class MyGUIBox : MonoBehaviour {
+	//按鈕文字
+	 	public string text;
+ 	//大小位置
+ 		public Rect position;
+ 	//深度 越小的數字就會越上面
+ 		public int depth;
+ 	//顏色及透明度
+ 		public Color color = Color.white;
+ 	//是否啟用
+ 		public bool isEnabled = true;
+ 	//樣式設置
+ 		public GUIStyle style;
+ 
+ 	void OnGUI(){
+  
+  		GUI.color = color;
+  		GUI.depth = depth;
+  		GUI.enabled = isEnabled;
+  
+  		GUI.Box(position , text , style);
+ 	}
+	}
+
+	object.GameObject.SetActive(true);
+	//----------------------------------------------------------------------
+#region 結構   
+//這個可以把這些code縮起來 但記得要打開折疊器
+//tool->option->General->Enable code folding打勾
+[System.Serializable]
+public struct Hpstuff{
+public float Hp;
+public float MaxHp;
+public float HpbyLevel;
+}
+[System.Serializable]
+public struct Mpstuff{
+public float Mp;
+public float MaxMp;
+public float MpbyLevel;
+}
+[System.Serializable]
+public struct Attackstuff{
+public float Attack;
+public float AttackbyLevel;
+}
+[System.Serializable]
+public struct stuff{
+public Hpstuff Hps;
+public Mpstuff Mps;
+public Attackstuff Att;
+}
+#endregion
+public stuff warrior, wiz, archer, robber;
+public start(){
+	warrior.Hps.Hp=100;
+
+}
+
+//=----------------------------------------
+
+//如果要按UI 而不要按到底下的物件時
+
+using UnityEngine.EventSystems;
+
+//加上
+if(!EventSystem.current.IsPointerOverGameObject()){
+
+//底下物件原來的內容
+
+}
+
+//--------------------------------------
+
+// 取得名稱
+string Name = gameObject.name;
+
+// 取得標籤
+string Tag = gameObject.tag;
+
+物件的座標
+
+// 取得世界座標
+Vector3 Pos = gameObject.transform.position;
+
+// 設置世界座標 為 (x, y, z)
+gameObject.transform.position = new Vector3(x, y, z);
+
+// 設置世界座標 為 (0, 0, 0)
+gameObject.transform.position = Vector3.zero;
+
+// 取得本地座標
+Vector3 Pos = gameObject.transform.localPosition;
+
+// 設置本地座標 為 (x, y, z)
+gameObject.transform.localPosition = new Vector3(x, y, z);
+
+// 設置本地座標 為 (0, 0, 0)
+gameObject.transform.localPosition = Vector3.zero;
+
+物件的旋轉角度
+
+// 取得世界旋轉角度
+Vector3 Rot = gameObject.transform.rotation.eulerAngles;
+
+// 設置世界旋轉角度 為 (x, y, z) Ex-1
+gameObject.transform.rotation.eulerAngles = new Vector3(x, y, z);
+// 設置世界旋轉角度 為 (x, y, z) Ex-2
+gameObject.transform.rotation = Quaternion.Euler (new Vector3(x, y, z));
+
+// 設置世界旋轉角度 為 (0, 0, 0) Ex-1
+gameObject.transform.rotation.eulerAngles = Vector3.zero;
+// 設置世界旋轉角度 為 (0, 0, 0) Ex-2
+gameObject.transform.rotation = Quaternion.Euler (new Vector3(0, 0, 0));
+
+// 取得本地旋轉角度
+Vector3 Rot = gameObject.transform.localRotation.eulerAngles;
+
+// 設置本地旋轉角度 為 (x, y, z) Ex-1
+gameObject.transform.localRotation.eulerAngles = new Vector3(x, y, z);
+transform.localRotation.eulerAngles= new Vector3(x, y, z);
+// 設置本地旋轉角度 為 (x, y, z) Ex-2
+gameObject.transform.localRotation = Quaternion.Euler (new Vector3(x, y, z));
+
+transform.localRotation = Quaternion.Euler (new Vector3(x, y, z));
+
+// 設置本地旋轉角度 為 (0, 0, 0) Ex-1
+gameObject.transform.localRotation.eulerAngles= Vector3.zero;
+// 設置本地旋轉角度 為 (0, 0, 0) Ex-2
+gameObject.transform.localRotation = Quaternion.Euler (new Vector3(0, 0, 0));
+
+物件的縮放尺寸
+
+// 取得本地縮放尺寸
+Vector3 Sca = gameObject.transform.localScale;
+
+// 設置本地縮放尺寸為 (x, y, z)
+gameObject.transform.localScale = new Vector3(x, y, z);
+
+// 設置本地縮放尺寸為 (0, 0, 0)
+gameObject.transform.localScale = Vector3.zero;
+
+物件操作
+
+// 取得子物件數量
+int ChildCount = gameObject.transform.childCount;
+
+// 以子物件的索引位置取得子物件(GameObject)
+int ChildIndex = 0;
+GameObject Child = gameObject.transform.getChild( ChildIndex ).gameObject;
+
+// 取得父物件(GameObject)
+GameObject Parent = gameObject.transform.parent.gameObject;
+
+// 設置父物件(GameObject)
+GameObject NewParent = new GameObject();
+gameObject.transform.SetParent( NewParent.transfrom );
+
+// 取得指定名稱的物件
+string ObjectName = "SomeGameObject";
+GameObject SearchObject = GameObject.Find( ObjectName );
+
+// 毀滅指定物件
+GameObject SomeObject = new GameObject();
+GameObject.Destroy( SomaObject );
+
+// 場景載入時不毀滅指定物件
+GameObject SomeObject = new GameObject();
+GameObject.DontDestoryOnLoad( SomeObject );
+
+// 複製物件
+GameObject SomeObject = new GameObject();
+GameObject CloneObject = GameObject.Instantiate( SomeObject );
+
+// 取得物件的掛載元件 Component - Collider
+Collider currentCollider = gameObject.GetComponent<Collider>();
+
+// 取得物件的掛載元件 Component - Renderer
+Renderer currentRenderer = gameObject.GetComponent<Renderer>();
+
+//------------------------------
